@@ -16,7 +16,7 @@
         rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link rel="stylesheet" href="{{asset('css/pages/admin/style.css')}}"></head>
+    <link rel="stylesheet" href="{{asset('css/admin/style.css')}}"></head>
 
         <!-- Font Awesome -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -65,18 +65,17 @@
               <!-- Nav Item - Pages Collapse Menu -->
               <li class="nav-item">
                   <div class="dropdown">
-                    <a class="nav-link collapsed"
-                    data-toggle="collapse" data-target="#collapseTwo"
-                    aria-expanded="true" aria-controls="collapseTwo"
-                      type="button"
+                    <div class="nav-link collapsed"
+                      data-toggle="collapse" data-target="#collapseTwo"
+                      aria-expanded="true" aria-controls="collapseTwo"
                       id="dropdownMenuButton"
                       data-mdb-dropdown-init
                       data-mdb-ripple-init
                       aria-expanded="false"
                     >
-                      <i class="fa-regular fa-square-plus"></i>
+                      <i class="fa-solid fa-users"></i>
                       <span>Membres</span>
-                    </a>
+                    </div>
                     <ul class="dropdown-menu ml-4" aria-labelledby="dropdownMenuButton">
                       <li><a class="dropdown-item" href="{{route('addNewWork')}}">Ajouter membres</a></li>
                       <li><a class="dropdown-item" href="{{route('allMembers')}}">Tout les membres</a></li>
