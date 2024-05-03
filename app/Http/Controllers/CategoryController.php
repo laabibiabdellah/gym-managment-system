@@ -12,7 +12,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        $categories = Category::all();
+        return view('categories.index');
     }
 
     /**
@@ -20,7 +21,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        return view('categories.create');
     }
 
     /**
@@ -28,7 +29,13 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $formFields = $request->validate([
+           'nom_categorie' => 'required|max:255'
+        ]);
+
+        Category::create($formFields);
+
+        return redirect()->route('categories.index')->with('succes', 'Categorie ajouté avec succès');
     }
 
     /**
@@ -36,7 +43,7 @@ class CategoryController extends Controller
      */
     public function show(Category $category)
     {
-        //
+        return view('categories.show', compact('category'));
     }
 
     /**
@@ -44,7 +51,7 @@ class CategoryController extends Controller
      */
     public function edit(Category $category)
     {
-        //
+        return view('categories.edit', compact('category'));
     }
 
     /**
@@ -52,7 +59,14 @@ class CategoryController extends Controller
      */
     public function update(Request $request, Category $category)
     {
-        //
+        $formFields = $request->validate([
+            'nom_categorie' => 'required|max:255'
+        ]);
+
+        $category->update($formFields);
+
+        return redirect()->route('categories.index')->with('succes', 'Categorie modifié avec succès');
+
     }
 
     /**
@@ -60,6 +74,7 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category)
     {
-        //
+        $category->delete();
+        return redirect()->route('categories.index')->with('succes', 'Categorie supprimée avec succès');
     }
 }
