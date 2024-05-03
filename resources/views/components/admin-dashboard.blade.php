@@ -21,7 +21,7 @@
 
         <!-- Font Awesome -->
         <link
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        href="{{asset(assets/all.min.css)}}"
         rel="stylesheet"
         />
         <!-- Google Fonts -->
@@ -31,7 +31,7 @@
         />
         <!-- MDB -->
         <link
-        href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.2.0/mdb.min.css"
+        href="{{asset(assets/mdb.min.css)}}"
         rel="stylesheet"
         />
   </head>
