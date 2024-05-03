@@ -1,0 +1,10 @@
+.portfolio-overlay,
+.portfolio-content {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+.portfolio-content {
+    flex-direction: column !important;
+    gap: 25px !important;
+}
