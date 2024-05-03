@@ -46,7 +46,7 @@
               <!-- Sidebar - Brand -->
               <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{asset('dashboard')}}">
                 {{-- <img class="admin-brand" src="{{asset('imgs/logoPng.png')}}"> --}}
-                <h1 class="text-title">Admin - dashboard</h1>
+                <h4 class="text-title">Admin<br><small>dashboard</small></h4>
               </a>
 
               <!-- Divider -->
