@@ -21,7 +21,7 @@
 
         <!-- Font Awesome -->
         <link
-        href="{{asset(assets/all.min.css)}}"
+        href="{{asset('assets/all.min.css')}}"
         rel="stylesheet"
         />
         <!-- Google Fonts -->
@@ -31,7 +31,7 @@
         />
         <!-- MDB -->
         <link
-        href="{{asset(assets/mdb.min.css)}}"
+        href="{{asset('assets/mdb.min.css')}}"
         rel="stylesheet"
         />
   </head>
@@ -79,12 +79,11 @@
                       aria-expanded="false"
                     >
                       <i class="fa-regular fa-square-plus"></i>
-                      <span>Add new work</span>
+                      <span>Membres</span>
                     </a>
                     <ul class="dropdown-menu ml-4" aria-labelledby="dropdownMenuButton">
-                      <li><a class="dropdown-item" href="#">Action</a></li>
-                      <li><a class="dropdown-item" href="#">Another action</a></li>
-                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                      <li><a class="dropdown-item" href="{{route('addNewWork')}}">Ajouter membres</a></li>
+                      <li><a class="dropdown-item" href="{{route('allMembers')}}">Tout les membres</a></li>
                     </ul>
                   </div>
               </li>
