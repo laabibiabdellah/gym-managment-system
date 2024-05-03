@@ -44,8 +44,7 @@
           <ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar">
 
               <!-- Sidebar - Brand -->
-              <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{asset('dashboard')}}">
-                {{-- <img class="admin-brand" src="{{asset('imgs/logoPng.png')}}"> --}}
+              <a class="sidebar-brand d-flex align-items-center justify-content-center py-5" href="{{asset('dashboard')}}">
                 <h4 class="text-title">Admin<br><small>dashboard</small></h4>
               </a>
 
@@ -58,7 +57,7 @@
                       <i class="fas fa-fw fa-tachometer-alt"></i>
                       <span>Dashboard</span></a>
               </li>
-
+              
               <!-- Divider -->
               <hr class="sidebar-divider">
 
@@ -69,11 +68,25 @@
 
               <!-- Nav Item - Pages Collapse Menu -->
               <li class="nav-item">
-                  <a class="nav-link collapsed" href="{{route('addNewWork')}}" data-toggle="collapse" data-target="#collapseTwo"
-                      aria-expanded="true" aria-controls="collapseTwo">
+                  <div class="dropdown">
+                    <a class="nav-link collapsed"
+                    data-toggle="collapse" data-target="#collapseTwo"
+                    aria-expanded="true" aria-controls="collapseTwo"
+                      type="button"
+                      id="dropdownMenuButton"
+                      data-mdb-dropdown-init
+                      data-mdb-ripple-init
+                      aria-expanded="false"
+                    >
                       <i class="fa-regular fa-square-plus"></i>
                       <span>Add new work</span>
-                  </a>
+                    </a>
+                    <ul class="dropdown-menu ml-4" aria-labelledby="dropdownMenuButton">
+                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                  </div>
               </li>
 
               <!-- Nav Item - Utilities Collapse Menu -->
