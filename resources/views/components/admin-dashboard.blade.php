@@ -27,9 +27,9 @@
         />
         <!-- MDB -->
         <link
-        href="{{asset('assets/mdb.min.css')}}"
+        href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.2.0/mdb.min.css"
         rel="stylesheet"
-        />
+      />
   </head>
   <body id="page-top">
 
@@ -63,7 +63,7 @@
               </div>
 
               <!-- Nav Item - Pages Collapse Menu -->
-              <li class="nav-item">
+              <li class="nav-item" style="cursor:pointer !important;">
                   <div class="dropdown">
                     <div class="nav-link collapsed"
                       data-toggle="collapse" data-target="#collapseTwo"
@@ -84,7 +84,7 @@
               </li>
 
               <!-- Nav Item - Utilities Collapse Menu -->
-              <li class="nav-item">
+              <li class="nav-item" style="cursor:pointer !important;">
                   <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
                       aria-expanded="true" aria-controls="collapseUtilities">
                       <i class="fas fa-fw fa-wrench"></i>

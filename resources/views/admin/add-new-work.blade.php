@@ -1,13 +1,13 @@
 <link rel="stylesheet" href="{{asset('css/admin/add-new-work.css')}}">
-<x-admin-dashboard dashTitle='Add new work'>
+<x-admin-dashboard dashTitle='Ajouter member'>
     <form action="">
         <div data-mdb-input-init class="form-outline mb-4">
-            <input type="email" id="form1Example1" class="form-control" />
-            <label class="form-label" for="form1Example1">Brand name</label>
+            <input type="text" id="form1Example1" class="form-control" />
+            <label class="form-label" for="form1Example1">Nom</label>
         </div>
-        <div class="mb-4">
-            <label for="formFileMultiple" class="form-label">Work image</label>
-            <input class="form-control" type="file" id="formFileMultiple" multiple />
+        <div data-mdb-input-init class="form-outline mb-4">
+            <input type="text" id="form1Example1" class="form-control" />
+            <label class="form-label" for="form1Example1">Prenom</label>
         </div>
         <div class="mb-4">
             <select class="form-select" aria-label="Default select example">
@@ -17,6 +17,10 @@
                 <option value="3">Three</option>
             </select>
         </div>
-        <button data-mdb-ripple-init type="submit" class="btn add btn-block">Add</button>
+        <div data-mdb-input-init class="form-outline mb-4">
+            <input type="number" id="form1Example1" class="form-control" />
+            <label class="form-label" for="form1Example1">Montant paye</label>
+        </div>
+        <button data-mdb-ripple-init type="submit" class="btn add btn-block">Ajoute member</button>
     </form>
 </x-admin-dashboard>
