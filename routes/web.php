@@ -11,3 +11,7 @@ Route::get('/dashboard', function () {
 Route::get('/dashboard/add-new-work', function () {
     return view('admin/add-new-work');
 })->name('addNewWork');
+
+Route::get('/test', function() {
+    return 'test';
+});
