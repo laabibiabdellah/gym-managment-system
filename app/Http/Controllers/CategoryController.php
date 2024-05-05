@@ -13,7 +13,7 @@ class CategoryController extends Controller
     public function index()
     {
         $categories = Category::all();
-        return view('categories.index');
+        return view('categories.index', compact('categories'));
     }
 
     /**
@@ -30,7 +30,7 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         $formFields = $request->validate([
-           'nom_categorie' => 'required|max:255'
+            'nom_categorie' => 'required|max:255|unique:categories'
         ]);
 
         Category::create($formFields);
@@ -66,7 +66,6 @@ class CategoryController extends Controller
         $category->update($formFields);
 
         return redirect()->route('categories.index')->with('succes', 'Categorie modifié avec succès');
-
     }
 
     /**
@@ -75,6 +74,6 @@ class CategoryController extends Controller
     public function destroy(Category $category)
     {
         $category->delete();
-        return redirect()->route('categories.index')->with('succes', 'Categorie supprimée avec succès');
+        return to_route('categories.index')->with('success', 'Categorie supprimée avec succès');
     }
 }

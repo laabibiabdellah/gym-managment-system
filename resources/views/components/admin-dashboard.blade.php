@@ -77,19 +77,30 @@
                       <span>Membres</span>
                     </div>
                     <ul class="dropdown-menu ml-4" aria-labelledby="dropdownMenuButton">
-                      <li><a class="dropdown-item" href="{{route('addNewWork')}}">Ajouter membres</a></li>
-                      <li><a class="dropdown-item" href="{{route('allMembers')}}">Tout les membres</a></li>
+                      <li><a class="dropdown-item" href="{{route('members.create')}}">Ajouter membres</a></li>
+                      <li><a class="dropdown-item" href="{{route('members.index')}}">Touts les membres</a></li>
                     </ul>
                   </div>
               </li>
-
-              <!-- Nav Item - Utilities Collapse Menu -->
+              <!-- Nav Item - Pages Collapse Menu -->
               <li class="nav-item" style="cursor:pointer !important;">
-                  <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-                      aria-expanded="true" aria-controls="collapseUtilities">
-                      <i class="fas fa-fw fa-wrench"></i>
-                      <span>Utilities</span>
-                  </a>
+                  <div class="dropdown">
+                    <div class="nav-link collapsed"
+                      data-toggle="collapse" data-target="#collapseTwo"
+                      aria-expanded="true" aria-controls="collapseTwo"
+                      id="dropdownMenuButton"
+                      data-mdb-dropdown-init
+                      data-mdb-ripple-init
+                      aria-expanded="false"
+                    >
+                    <i class="fas fa-fw fa-wrench"></i>
+                    <span>Utilities</span>
+                    </div>
+                    <ul class="dropdown-menu ml-4" aria-labelledby="dropdownMenuButton">
+                      <li><a class="dropdown-item" href="{{route('categories.create')}}">Ajouter Categories</a></li>
+                      <li><a class="dropdown-item" href="{{route('categories.index')}}">Toutes les Categories</a></li>
+                    </ul>
+                  </div>
               </li>
 
               <!-- Divider -->
@@ -134,8 +145,8 @@
                             aria-expanded="false"
                           >
                             <img
-                              src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp"
-                              class="rounded-circle"
+                              src="{{asset('imgs/admin-avatar.png')}}"
+                              class="rounded-circle border border-secondary"
                               height="25"
                               alt="Black and White Portrait of a Man"
                               loading="lazy"
@@ -173,16 +184,6 @@
                   </div>
               </div>
               <!-- End of Main Content -->
-
-              <!-- Footer -->
-              <footer class="sticky-footer bg-white">
-                  <div class="container my-auto">
-                      <div class="copyright text-center my-auto">
-                          <span>Copyright &copy; Concept PLV 2024</span>
-                      </div>
-                  </div>
-              </footer>
-              <!-- End of Footer -->
 
           </div>
           <!-- End of Content Wrapper -->

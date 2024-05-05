@@ -1,11 +1,14 @@
 :root {
-    --primary: #009ee0;
+    --primary: #3f3f3f;
 }
 
 .sidebar {
     background-color: var(--primary);
 }
-
+.nav-item .dropdown .nav-link span,
+.nav-item .dropdown .nav-link span:focus {
+    color: #fff;
+}
 @media (max-width: 768px) {
     .admin-brand {
         width: 80%;

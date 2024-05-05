@@ -1,4 +1,12 @@
+:root {
+    --primary-color: #3f3f3f;
+    --secondary-color: #a3a3a3;
+    --light-color: #fff;
+}
 .add {
-    background-color: #009ee0 !important;
-    color: #fff !important;
+    background-color: var(--primary-color) !important;
+    color: var(--light-color) !important;
+}
+.form-select {
+    background-color: #f8f9fc !important;
 }

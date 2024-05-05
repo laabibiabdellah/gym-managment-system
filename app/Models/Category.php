@@ -9,6 +9,8 @@ class Category extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['nom_categorie'];
+
     // categorie user relationship
     public function users()
     {

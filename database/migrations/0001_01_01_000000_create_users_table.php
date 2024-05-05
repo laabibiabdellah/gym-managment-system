@@ -16,13 +16,14 @@ return new class extends Migration
             $table->string('nom');
             $table->string('prenom');
             $table->string('email')->nullable();
-            $table->date('date_payement');
-            $table->date('date_expriration');
+            $table->date('date_payement')->nullable();
+            $table->date('date_expriration')->nullable();
             $table->decimal('montant_payé');
             $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
+            $table->string('password')->nullable();
             $table->rememberToken();
             $table->timestamps();
+            $table->softDeletes();
         });
 
         Schema::create('password_reset_tokens', function (Blueprint $table) {
@@ -39,7 +40,6 @@ return new class extends Migration
             $table->longText('payload');
             $table->integer('last_activity')->index();
         });
-
     }
 
     /**
