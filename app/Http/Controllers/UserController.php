@@ -15,7 +15,8 @@ class UserController extends Controller
     public function index()
     {
         $members = User::paginate(10);
-        return view('members.all-members', compact('members'));
+        $categories = Category::all();
+        return view('members.all-members', compact('members', 'categories'));
     }
 
     /**

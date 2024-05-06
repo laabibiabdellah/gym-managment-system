@@ -2,6 +2,10 @@
     --primary: #3f3f3f;
 }
 
+.hide-tr {
+    display: none !important;
+}
+
 .sidebar {
     background-color: var(--primary);
 }
@@ -9,6 +13,7 @@
 .nav-item .dropdown .nav-link span:focus {
     color: #fff;
 }
+
 @media (max-width: 768px) {
     .admin-brand {
         width: 80%;

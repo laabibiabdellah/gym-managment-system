@@ -38,7 +38,7 @@
                             <i class="fa-solid fa-caret-down" style="cursor:pointer !important;"></i>
                             </div>
                             <ul class="dropdown-menu " aria-labelledby="dropdownMenuButton">
-                              <li><a class="dropdown-item" href="{{route('categories.edit',$categorie->id)}}">Modifier</a></li>
+                              <li><a class="dropdown-item" href="{{route('categories.edit',$categorie)}}">Modifier</a></li>
                               <li>
                                 <form method="post" action="{{route('categories.destroy',$categorie->id)}}">
                                   @csrf

@@ -32,7 +32,7 @@
       />
   </head>
   <body id="page-top">
-
+    <div class="contant">
       <!-- Page Wrapper -->
       <div id="wrapper">
 
@@ -156,8 +156,11 @@
                             class="dropdown-menu dropdown-menu-end"
                             aria-labelledby="navbarDropdownMenuAvatar"
                           >
-                            <li>
-                              <a class="dropdown-item" href="#">Logout</a>
+                            <li style="height: 100% !important">
+                              <form action="{{route('logout')}}" method="POST">
+                                @csrf
+                                <button class="dropdown-item">Logout</button>
+                              </form>
                             </li>
                           </ul>
                         </div>
@@ -184,7 +187,6 @@
                   </div>
               </div>
               <!-- End of Main Content -->
-
           </div>
           <!-- End of Content Wrapper -->
 
@@ -201,5 +203,6 @@
         type="text/javascript"
         src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.2.0/mdb.umd.min.js"
         ></script>
+      </div>
   </body>
 </html>

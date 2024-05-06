@@ -5,7 +5,32 @@
     @if (session()->has('success'))
       <div class="alert alert-success text-center">{{session()->get('success')}}</div>
     @endif
-    <table class="table align-middle mb-0 bg-white">
+
+      <div class="d-flex align-items-center justify-content-center flex-wrap mb-3 gap-2 switch-btns">
+        @if(count($categories) <= 0 )
+          ''
+        @else
+          <div>
+            <input type="radio" class="btn-check border border-3" name="options" id="option1" autocomplete="off" />
+            <label data-cat="all" class="btn btn-secondary btn-cat active" for="option1" data-mdb-ripple-init>Tous</label>
+          </div>
+            @foreach ($categories as $categorie )
+              <div>
+                <input type="radio" class="btn-check" name="options" id="option1" autocomplete="off" />
+                <label data-cat="cat-{{$categorie->id}}" class="btn btn-secondary btn-cat" for="option1" data-mdb-ripple-init>{{ $categorie->nom_categorie}}</label>
+              </div>
+            @endforeach
+        @endif
+      </div>
+      <div class=" mb-3 w-100 d-flex align-items-center justify-content-center">
+        <div class="form-outline w-75" data-mdb-input-init>
+          <i class="fas fa-search trailing"></i>
+          <input type="text" id="form1" class="form-control form-icon-trailing search-inp" onkeyup="search()" />
+          <label class="form-label" for="form1">Rechercher un membre</label>
+        </div>
+      </div>
+    <div class="table-responsive">
+    <table class="table align-middle mb-0 bg-white table-hover">
         <thead class="bg-light">
           <tr>
             <th>ID</th>
@@ -28,9 +53,13 @@
             </tr>
           @else
             @foreach ( $members as $member )
-          <tr class="{{ Carbon::now()->toDateString() >= Carbon::parse($member->date_expriration)->subDays(3)->toDateString() ? 'table-warning' : '' }}">
+          @php
+            $a = Carbon::parse($member->date_expriration);
+            $b = Carbon::parse(Carbon::now()->toDateString());
+          @endphp
+          <tr class="all {{'cat-'.$member->category_id}} {{$a->diffInDays($b) >= -3 ?'table-warning':''}}">
           <td>{{$loop->iteration}}</td>
-            <td>
+            <td class="nom">
               <div class="d-flex align-items-center">
                 <img
                     src="{{asset('imgs/user.png')}}"
@@ -63,12 +92,8 @@
             <td>{{$member->montant_payé}} DH</td>
             <td>{{$member->date_payement}}</td>
             <td>{{$member->date_expriration}}</td>
-            @php
-              $a = Carbon::parse($member->date_expriration);
-              $b = Carbon::parse(Carbon::now()->toDateString());
-            @endphp
             <td>
-              <span class="badge badge-info">{{$a->diffInDays($b)}} jours</span>
+              <span class="badge badge-info">{{-$a->diffInDays($b)}} jours</span>
             </td>
             <td>
                 <div class="dropdown">
@@ -93,4 +118,10 @@
           @endif
         </tbody>
       </table>
+    </div>
+      <div class="mt-3">
+        {{$members->links()}}
+      </div>
 </x-admin-dashboard>
+
+<script src="{{asset('js/all-members.js')}}"></script>
