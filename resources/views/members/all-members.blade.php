@@ -1,7 +1,7 @@
 @php
   use Carbon\Carbon;
 @endphp
-<x-admin-dashboard dashTitle='Tout les member'>
+<x-admin-dashboard title='Tout les member' dashTitle='Tout les member'>
     @if (session()->has('success'))
       <div class="alert alert-success text-center">{{session()->get('success')}}</div>
     @endif

@@ -1,5 +1,5 @@
 <link rel="stylesheet" href="{{asset('css/admin/add-new-work.css')}}">
-<x-admin-dashboard dashTitle='Modifier member'>
+<x-admin-dashboard title='Modifier member' dashTitle='Modifier member'>
     <form method="post" action="{{route('members.update',$member)}}">
         @csrf
         @method('put')

@@ -1,5 +1,5 @@
 <link rel="stylesheet" href="{{asset('css/admin/add-new-work.css')}}">
-<x-admin-dashboard dashTitle='Ajouter member'>
+<x-admin-dashboard title='Ajouter member' dashTitle='Ajouter member'>
     <form method="post" action="{{route('members.store')}}">
         @csrf
         <div data-mdb-input-init class="form-outline">

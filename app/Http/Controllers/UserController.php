@@ -6,6 +6,7 @@ use App\Models\Category;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
@@ -14,7 +15,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $members = User::paginate(10);
+        $members = User::where('password', '=', null)->paginate(10);
         $categories = Category::all();
         return view('members.all-members', compact('members', 'categories'));
     }
