@@ -53,7 +53,7 @@
                       <i class="fas fa-fw fa-tachometer-alt"></i>
                       <span>Dashboard</span></a>
               </li>
-              
+
               <!-- Divider -->
               <hr class="sidebar-divider">
 
@@ -93,8 +93,8 @@
                       data-mdb-ripple-init
                       aria-expanded="false"
                     >
-                    <i class="fas fa-fw fa-wrench"></i>
-                    <span>Utilities</span>
+                    <i class="fas fa-solid fa-list"></i>
+                    <span>Categories</span>
                     </div>
                     <ul class="dropdown-menu ml-4" aria-labelledby="dropdownMenuButton">
                       <li><a class="dropdown-item" href="{{route('categories.create')}}">Ajouter Categories</a></li>
