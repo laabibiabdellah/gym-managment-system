@@ -11,13 +11,13 @@ Route::get('/', function () {
 
 Route::get('/dashboard', function () {
     return view('members.dash');
-})->name('dashboard')->middleware('auth');
+})->name('dashboard');
 
-Route::get('login', [LoginController::class, 'login'])->name('login')->middleware('auth');
-Route::post('login', [LoginController::class, 'handle'])->name('handle')->middleware('auth');
-Route::post('logout', [LoginController::class, 'logout'])->name('logout')->middleware('auth');
+Route::get('login', [LoginController::class, 'login'])->name('login');
+Route::post('login', [LoginController::class, 'handle'])->name('handle');
+Route::post('logout', [LoginController::class, 'logout'])->name('logout');
 
 Route::prefix('dashboard')->group(function () {
-    Route::resource('categories', CategoryController::class)->except('show')->middleware('auth');
-    Route::resource('members', UserController::class)->except('show')->middleware('auth');
+    Route::resource('categories', CategoryController::class)->except('show');
+    Route::resource('members', UserController::class)->except('show');
 });
