@@ -1,14 +1,14 @@
 <x-admin-dashboard title='Dashboard' dashTitle='Dashboard'>
     <div class="container">
        <div class="row my-4">
-           <div class="col-md-3">
+           <div class="col-md-6">
                <div class="card-counter info">
                    <i class="fa fa-users"></i>
                    <span class="count-numbers">{{ $membersCount }}</span>
                    <span class="count-name">Membres</span>
                </div>
            </div>
-           <div class="col-md-3">
+           <div class="col-md-6">
                <div class="card-counter success">
                    <i class="fa fa-list"></i>
                    <span class="count-numbers">{{ $categoriesCount }}</span>
