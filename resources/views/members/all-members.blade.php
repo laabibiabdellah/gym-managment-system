@@ -47,7 +47,7 @@
         <tbody>
           @if(count($members) == 0 )
             <tr>
-                <td colspan="3" class="text-center">
+                <td colspan="9" class="text-center">
                     <h2>NULL</h2>
                 </td>
             </tr>
@@ -108,8 +108,10 @@
                         <form action="{{route('members.destroy',$member)}}" method="POST">
                           @csrf
                           @method('delete')
-                          <button class="dropdown-item">Supprimer</button>
+                          <button 
+                          class="dropdown-item">Supprimer</button>
                         </form>
+                      </li>
                     </ul>
                   </div>
             </td>

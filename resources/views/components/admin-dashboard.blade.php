@@ -30,6 +30,7 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.2.0/mdb.min.css"
         rel="stylesheet"
       />
+
   </head>
   <body id="page-top">
     <div class="contant">
