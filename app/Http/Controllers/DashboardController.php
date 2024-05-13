@@ -11,7 +11,7 @@ class DashboardController extends Controller
     public function index()
     {
         // stats
-        $membersCount = User::count();
+        $membersCount = User::all()->where('montant_payé', '>', 0)->count();
         $categoriesCount = Category::count();
 
         // charts
@@ -54,9 +54,9 @@ class DashboardController extends Controller
 
     public function userCategoryChart()
     {
-       $chart_options = [
+        $chart_options = [
             'chart_title' => 'Nombre de membres par categorie',
-           'report_type' => 'group_by_relationship',
+            'report_type' => 'group_by_relationship',
             'model' => 'App\Models\User',
             'relationship_name' => 'category',
             'group_by_field' => 'nom_categorie',
