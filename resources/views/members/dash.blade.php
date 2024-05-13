@@ -22,12 +22,11 @@
         <h1>{{ $incomeChart->options['chart_title'] }}</h1>
         {!! $incomeChart->renderHtml() !!}
 
-        <h1>{{ $userCategoryChart->options['chart_title'] }}</h1>
-        {!! $userCategoryChart->renderHtml() !!}
-
+{{--        <h1>{{ $userCategoryChart->options['chart_title'] }}</h1>--}}
+{{--        {!! $userCategoryChart->renderHtml() !!}--}}
         {!! $membersChart->renderChartJsLibrary() !!}
         {!! $incomeChart->renderJs() !!}
-        {!! $userCategoryChart->renderJs() !!}
+{{--        {!! $userCategoryChart->renderJs() !!}--}}
         {!! $membersChart->renderJs() !!}
     </div>
 </x-admin-dashboard>

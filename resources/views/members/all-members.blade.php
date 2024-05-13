@@ -35,11 +35,11 @@
           <tr>
             <th>ID</th>
             <th>Nom et prenom</th>
-            <th>Categorie de sport</th>
+            <th>Catégorie de sport</th>
             <th>Status</th>
-            <th>Montant paye</th>
+            <th>Montant payé</th>
             <th>Date payment</th>
-            <th>Date expiratio</th>
+            <th>Date expiration</th>
             <th>Les jours restants</th>
             <th>Actions</th>
           </tr>
@@ -79,11 +79,11 @@
                 @else
                   {{ $member->category->nom_categorie}}
                 @endif
-               
+
               </p>
             </td>
             <td>
-              <span class="badge 
+              <span class="badge
                {{Carbon::now()->toDateString() == $member->date_expriration?'badge-danger':'badge-success'}}
                rounded-pill d-inline">
                {{Carbon::now()->toDateString() == $member->date_expriration?'Session expiré':'En cours'}}
