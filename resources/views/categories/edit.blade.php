@@ -10,6 +10,6 @@
         @error('nom_categorie')
             <small class="text-danger">{{$message}}</small>
         @enderror
-        <button data-mdb-ripple-init type="submit" class="btn add btn-block mt-4">Ajouter Categorie</button>
+        <button data-mdb-ripple-init type="submit" class="btn add btn-block mt-4">Modifier Categorie</button>
     </form>
 </x-admin-dashboard>

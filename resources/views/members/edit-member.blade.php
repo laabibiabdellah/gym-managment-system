@@ -59,6 +59,6 @@
         @error('nombre_mois')
             <small class="text-danger">{{$message}}</small>
         @enderror
-        <button data-mdb-ripple-init type="submit" class="btn add btn-block mt-4">Ajoute member</button>
+        <button data-mdb-ripple-init type="submit" class="btn add btn-block mt-4">Modifier member</button>
     </form>
 </x-admin-dashboard>
