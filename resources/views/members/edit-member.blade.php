@@ -24,7 +24,7 @@
                     <option disabled>Null</option>
                 @else
                     @foreach ($categories as $categorie )
-                        <option value="{{$categorie->id}}" {{$categorie->id == $member->category->id? 'selected':''}}>{{$categorie->nom_categorie}}</option>
+                        <option value="{{$categorie->id}}" {{$member->category_id == null?'': ($categorie->id == $member->category->id? 'selected':'')}}>{{$categorie->nom_categorie}}</option>
                     @endforeach
                 @endif
             </select>
