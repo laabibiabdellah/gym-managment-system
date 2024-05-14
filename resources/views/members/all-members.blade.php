@@ -108,8 +108,7 @@
                         <form action="{{route('members.destroy',$member)}}" method="POST">
                           @csrf
                           @method('delete')
-                          <button 
-                          class="dropdown-item">Supprimer</button>
+                          <button class="dropdown-item delete-btn">Supprimer</button>
                         </form>
                       </li>
                     </ul>
@@ -127,3 +126,5 @@
 </x-admin-dashboard>
 
 <script src="{{asset('js/all-members.js')}}"></script>
+
+<script src="{{asset('js/delete-confirmation.js')}}"></script>

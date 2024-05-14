@@ -6,7 +6,6 @@ use App\Models\Category;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
@@ -84,7 +83,7 @@ class UserController extends Controller
         $data['date_expriration'] = Carbon::now()->addDays(30 * $data['nombre_mois'])->toDateString();
 
         $member->update($data);
-        return to_route('members.index')->with('success', 'membre updated avec succès.');
+        return to_route('members.index')->with('success', 'membre modifié avec succès.');
     }
 
     /**
