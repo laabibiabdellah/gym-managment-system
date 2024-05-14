@@ -15,24 +15,23 @@ document.addEventListener("DOMContentLoaded", function () {
             const form = this.closest("form");
             swalWithBootstrapButtons
                 .fire({
-                    title: "Es-tu sûr?",
+                    title: "Êtes-vous sûr de supprimer ce membre?",
                     text: "Vous ne pourrez pas revenir en arrière!",
                     icon: "warning",
                     showCancelButton: true,
+                    confirmButtonColor: "#3085d6",
+                    cancelButtonColor: "#d33",
                     confirmButtonText: "Oui, supprime-le!",
-                    cancelButtonText: "Non, annule!",
-                })
-                .then((result) => {
-                    if (result.isConfirmed) {
-                        form.submit();
-                    } else if (result.dismiss === Swal.DismissReason.cancel) {
-                        swalWithBootstrapButtons.fire({
-                            title: "Annulé",
-                            text: "La suppression a été annulée :)",
-                            icon: "error",
-                        });
-                    }
-                });
+                    cancelButtonText: "Annuler",
+                }).then((result) => {
+                if (result.isConfirmed) {
+                    Swal.fire({
+                        title: "Supprimé!",
+                        text: "Membre supprimé avec succès.",
+                        icon: "success"
+                    });
+                }
+            });
         });
     });
 });

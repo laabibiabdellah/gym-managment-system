@@ -40,7 +40,7 @@
             <th>Montant payé</th>
             <th>Date payment</th>
             <th>Date expiration</th>
-            <th>Les jours restants</th>
+            <th>jours restants</th>
             <th>Actions</th>
           </tr>
         </thead>
@@ -60,17 +60,7 @@
           <tr class="all {{'cat-'.$member->category_id}} {{$a->diffInDays($b) >= -3 ?'table-warning':''}} {{$a->diffInDays($b) >= 0 ?'table-danger':''}}">
           <td>{{$loop->iteration}}</td>
             <td class="nom">
-              <div class="d-flex align-items-center">
-                <img
-                    src="{{asset('imgs/user.png')}}"
-                    alt=""
-                    style="width: 30px; height: 30px"
-                    class="rounded-circle"
-                    />
-                <div class="ms-3">
-                  <p class="fw-bold mb-1">{{$member->nom. ' ' .$member->prenom}}</p>
-                </div>
-              </div>
+                <p class="fw-bold mb-1">{{$member->nom. ' ' .$member->prenom}}</p>
             </td>
             <td>
               <p class="fw-normal mb-1">
@@ -89,7 +79,7 @@
                {{Carbon::now()->toDateString() >= $member->date_expriration?'Session expiré':'En cours'}}
               </span>
             </td>
-            <td>{{$member->montant_payé}} DH</td>
+            <td><small>{{$member->montant_payé}} DH</small></td>
             <td>{{$member->date_payement}}</td>
             <td>{{$member->date_expriration}}</td>
             <td>

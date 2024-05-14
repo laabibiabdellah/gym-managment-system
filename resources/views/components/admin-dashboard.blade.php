@@ -42,7 +42,7 @@
 
               <!-- Sidebar - Brand -->
               <a class="sidebar-brand d-flex align-items-center justify-content-center py-5" href="{{asset('dashboard')}}">
-                <h4 class="text-title">Admin<br><small>dashboard</small></h4>
+                <h4 class="text-title"><small>dashboard</small></h4>
               </a>
 
               <!-- Divider -->

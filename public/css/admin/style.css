@@ -933,6 +933,10 @@ pre code {
     font-size: 18px;
 }
 
+.swal2-actions {
+    gap: 25px;
+}
+
 @media (min-width: 576px) {
     .col-sm {
         flex-basis: 0;
