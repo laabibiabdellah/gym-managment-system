@@ -44,16 +44,15 @@ class UserController extends Controller
         $data['date_payement'] = Carbon::now()->toDateString();
         $data['date_expriration'] = Carbon::now()->addDays(30 * $data['nombre_mois'])->toDateString();
 
+        if ($request->has('assurance_payé')) {
+            $data['assurance_payé'] = 1;
+            $data['montant_assurance'] = $request['montant_assurance'];
+        } else {
+            unset($data['montant_assurance']);
+        }
+
         User::create($data);
         return to_route('members.index')->with('success', 'membre créé avec succès.');
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(User $user)
-    {
-        //
     }
 
     /**
