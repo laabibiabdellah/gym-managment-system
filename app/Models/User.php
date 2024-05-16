@@ -23,7 +23,9 @@ class User extends Authenticatable
         'category_id',
         'montant_payé',
         'date_payement',
-        'date_expriration'
+        'date_expriration',
+        'montant_assurance',
+        'assurance_payé'
     ];
 
     /**
