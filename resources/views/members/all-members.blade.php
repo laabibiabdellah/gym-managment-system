@@ -79,9 +79,9 @@
             </td>
             <td>
               <span class="badge
-               {{$date_payement >= $member->date_expriration?'badge-danger':'badge-success'}}
+               {{$get_to_day >= $member->date_expriration?'badge-danger':'badge-success'}}
                rounded-pill d-inline">
-               {{$date_expriration >= $member->date_expriration?'Session expiré':'En cours'}}
+               {{$get_to_day >= $member->date_expriration?'Session expiré':'En cours'}}
               </span>
             </td>
             <td><small>{{$member->montant_payé}} DH</small></td>
