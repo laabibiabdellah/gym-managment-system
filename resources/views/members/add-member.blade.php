@@ -35,7 +35,16 @@
             <input type="number" id="form1Example1" class="form-control @error('montant_payé') is-invalid @enderror" name="montant_payé"/>
             <label class="form-label" for="form1Example1">Montant payé</label>
         </div>
-        @error('montant_payé')
+        <!-- Default checkbox -->
+        <div class="form-check mt-4">
+            <input class="form-check-input" type="checkbox" id="flexCheckDefault" name="assurance_payé" />
+            <label class="form-check-label" for="flexCheckDefault">Default checkbox</label>
+        </div>
+        <div data-mdb-input-init class="form-outline mt-4">
+            <input type="number" id="assurance" hidden class="form-control @error('montant_assurance') is-invalid @enderror" name="montant_assurance"/>
+            <label class="form-label" for="assurance">Montant de l'assurance</label>
+        </div>
+        @error('montant_assurance')
             <small class="text-danger">{{$message}}</small>
         @enderror
         <div data-mdb-input-init class="form-outline mt-4">
@@ -61,3 +70,17 @@
         <button data-mdb-ripple-init type="submit" class="btn add btn-block mt-4">Ajoute member</button>
     </form>
 </x-admin-dashboard>
+
+<script>
+    const checkbox = document.getElementById('flexCheckDefault');
+    const textInput = document.getElementById('assurance');
+
+    checkbox.addEventListener('change', function() {
+      if (this.checked) {
+        textInput.removeAttribute('hidden');
+      } else {
+        textInput.setAttribute('hidden', 'true');
+        textInput.value = '';
+      }
+    });
+  </script>
