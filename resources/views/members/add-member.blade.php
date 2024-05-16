@@ -38,13 +38,20 @@
         <!-- Default checkbox -->
         <div class="form-check mt-4">
             <input class="form-check-input" type="checkbox" id="flexCheckDefault" name="assurance_payé" />
-            <label class="form-check-label" for="flexCheckDefault">Default checkbox</label>
+            <label class="form-check-label" for="flexCheckDefault">Assurance payé ?</label>
         </div>
-        <div data-mdb-input-init class="form-outline mt-4">
-            <input type="number" id="assurance" hidden class="form-control @error('montant_assurance') is-invalid @enderror" name="montant_assurance"/>
+        <div data-mdb-input-init id="assurance" hidden class="form-outline mt-4">
+            <input type="number" class="form-control @error('montant_assurance') is-invalid @enderror" name="montant_assurance"/>
             <label class="form-label" for="assurance">Montant de l'assurance</label>
         </div>
         @error('montant_assurance')
+            <small class="text-danger">{{$message}}</small>
+        @enderror
+        <div data-mdb-input-init class="form-outline mt-4">
+            <input type="date" data-mdb-inline id="date_payment" class="form-control @error('date_payement') is-invalid @enderror" name="date_payement"/>
+            <label class="form-label" for="date_payment">Date de payment</label>
+        </div>
+        @error('date_payement')
             <small class="text-danger">{{$message}}</small>
         @enderror
         <div data-mdb-input-init class="form-outline mt-4">

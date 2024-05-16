@@ -38,6 +38,7 @@
             <th>Catégorie de sport</th>
             <th>Status</th>
             <th>Montant payé</th>
+            <th>Assurance payé</th>
             <th>Date payment</th>
             <th>Date expiration</th>
             <th>jours restants</th>
@@ -54,10 +55,10 @@
           @else
             @foreach ( $members as $member )
           @php
-            $a = Carbon::parse($member->date_expriration);
-            $b = Carbon::parse(Carbon::now()->toDateString());
+            $date_expriration = Carbon::parse($member->date_expriration);
+            $date_payement = Carbon::parse($member->date_payement);
           @endphp
-          <tr class="all {{'cat-'.$member->category_id}} {{$a->diffInDays($b) >= -3 ?'table-warning':''}} {{$a->diffInDays($b) >= 0 ?'table-danger':''}}">
+          <tr class="all {{'cat-'.$member->category_id}} {{$date_expriration->diffInDays($date_payement) >= -3 ?'table-warning':''}} {{$date_expriration->diffInDays($date_payement) >= 0 ?'table-danger':''}}">
           <td>{{$loop->iteration}}</td>
             <td class="nom">
                 <p class="fw-bold mb-1">{{$member->nom. ' ' .$member->prenom}}</p>
@@ -74,16 +75,23 @@
             </td>
             <td>
               <span class="badge
-               {{Carbon::now()->toDateString() >= $member->date_expriration?'badge-danger':'badge-success'}}
+               {{$date_payement >= $member->date_expriration?'badge-danger':'badge-success'}}
                rounded-pill d-inline">
-               {{Carbon::now()->toDateString() >= $member->date_expriration?'Session expiré':'En cours'}}
+               {{$date_expriration >= $member->date_expriration?'Session expiré':'En cours'}}
               </span>
             </td>
             <td><small>{{$member->montant_payé}} DH</small></td>
+            <td>
+              <span class="badge
+              {{$member->assurance_payé ? 'badge-success':'badge-danger'}}
+               rounded-pill d-inline">
+               {{$member->assurance_payé ? 'OUI':'NON'}}
+              </span>
+            </td>
             <td>{{$member->date_payement}}</td>
             <td>{{$member->date_expriration}}</td>
             <td>
-              <span class="badge badge-info">{{$a->diffInDays($b) == 0 ?$a->diffInDays($b):-$a->diffInDays($b)}} jours</span>
+              <span class="badge badge-info">{{$date_expriration->diffInDays($date_payement) == 0 ?$date_expriration->diffInDays($date_payement):-$date_expriration->diffInDays($date_payement)}} jours</span>
             </td>
             <td>
                 <div class="dropdown">

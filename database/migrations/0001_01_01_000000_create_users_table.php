@@ -19,6 +19,8 @@ return new class extends Migration
             $table->date('date_payement')->nullable();
             $table->date('date_expriration')->nullable();
             $table->decimal('montant_payé');
+            $table->decimal("montant_assurance", 10, 2)->default(0);
+            $table->boolean("assurance_payé")->default(0);
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password')->nullable();
             $table->rememberToken();
