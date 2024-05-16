@@ -17,7 +17,6 @@ class DashboardController extends Controller
         // charts
         $membersChart = $this->membersChart();
         $incomeChart = $this->incomeChart();
-//        $userCategoryChart = $this->userCategoryChart();
 
         return view('members.dash', compact('membersChart', 'incomeChart', 'membersCount', 'categoriesCount'));
     }
@@ -51,19 +50,4 @@ class DashboardController extends Controller
         ];
         return new LaravelChart($chart_options);
     }
-
-//    public function userCategoryChart()
-//    {
-//        $chart_options = [
-//            'chart_title' => 'Nombre de membres par categorie',
-//            'report_type' => 'group_by_relationship',
-//            'model' => 'App\Models\User',
-//            'relationship_name' => 'category',
-//            'group_by_field' => 'nom_categorie',
-//            'chart_type' => 'pie',
-//            'aggregate_field' => 'nom_categorie',
-//            'aggregate_function' => 'count',
-//        ];
-//        return new laravelChart($chart_options);
-//    }
 }
