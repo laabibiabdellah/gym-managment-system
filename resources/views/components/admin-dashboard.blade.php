@@ -183,7 +183,7 @@
                       </div>
                   </div>
                   <!-- /.container-fluid -->
-                  <div class="app px-3">
+                  <div class="app p-4">
                     {{$slot}}
                   </div>
               </div>
