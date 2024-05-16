@@ -57,8 +57,12 @@
           @php
             $date_expriration = Carbon::parse($member->date_expriration);
             $date_payement = Carbon::parse($member->date_payement);
+            $get_to_day = Carbon::now()->toDateString();   
           @endphp
-          <tr class="all {{'cat-'.$member->category_id}} {{$date_expriration->diffInDays($date_payement) >= -3 ?'table-warning':''}} {{$date_expriration->diffInDays($date_payement) >= 0 ?'table-danger':''}}">
+          <tr class="all {{'cat-'.$member->category_id}} 
+
+            {{$date_expriration->diffInDays($get_to_day) >= -3 ?'table-warning':''}} 
+            {{$date_expriration->diffInDays($get_to_day) >= 0 ?'table-danger':''}}">
           <td>{{$loop->iteration}}</td>
             <td class="nom">
                 <p class="fw-bold mb-1">{{$member->nom. ' ' .$member->prenom}}</p>
@@ -91,7 +95,15 @@
             <td>{{$member->date_payement}}</td>
             <td>{{$member->date_expriration}}</td>
             <td>
-              <span class="badge badge-info">{{$date_expriration->diffInDays($date_payement) == 0 ?$date_expriration->diffInDays($date_payement):-$date_expriration->diffInDays($date_payement)}} jours</span>
+              <span class="badge badge-info">
+                {{
+                $date_payement->diffInDays($get_to_day) >= 0?
+                  $date_expriration->diffInDays($get_to_day) == 0 ?
+                  $date_expriration->diffInDays($get_to_day).' jours':
+                  -$date_expriration->diffInDays($get_to_day).' jours'
+                :"Ça ñ'a pas encore commencé, (".-$date_payement->diffInDays($get_to_day).' jours)'
+                }} 
+                </span>
             </td>
             <td>
                 <div class="dropdown">

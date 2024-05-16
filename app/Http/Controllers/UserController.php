@@ -76,10 +76,18 @@ class UserController extends Controller
             'category_id' => ['required', 'numeric'],
             'montant_payé' => ['required', 'numeric'],
             'nombre_mois' => ['required', 'numeric'],
-            'date_payment' => ['required', 'date'],
+            'date_payement' => ['required', 'date'],
         ]);
 
-        $data['date_expriration'] = Carbon::now()->addDays(30 * $data['nombre_mois'])->toDateString();
+        $data['date_payement'] = Carbon::parse($request->date_payement)->toDateString();
+        $data['date_expriration'] = Carbon::parse($request->date_payement)->addDays(30 * $data['nombre_mois'])->toDateString();
+
+        if ($request->has('assurance_payé')) {
+            $data['assurance_payé'] = 1;
+            $data['montant_assurance'] = $request['montant_assurance'];
+        } else {
+            unset($data['montant_assurance']);
+        }
 
         $member->update($data);
         return to_route('members.index')->with('success', 'membre modifié avec succès.');
