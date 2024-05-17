@@ -3,7 +3,7 @@
     <form method="Post" action="{{route('categories.store')}}">
         @csrf
         <div data-mdb-input-init class="form-outline">
-            <input type="text" id="form1Example1" class="form-control @error('nom_categorie') is-invalid @enderror" name="nom_categorie" />
+            <input type="text" id="form1Example1" class="form-control @error('nom_categorie') is-invalid @enderror" name="nom_categorie" value="{{old('nom_categorie')}}" />
             <label class="form-label" for="form1Example1">Nom Categorie</label>
         </div>
         @error('nom_categorie')

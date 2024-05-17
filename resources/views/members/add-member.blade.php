@@ -3,14 +3,14 @@
     <form method="post" action="{{route('members.store')}}">
         @csrf
         <div data-mdb-input-init class="form-outline">
-            <input type="text" id="form1Example1" class="form-control @error('nom') is-invalid @enderror" name="nom" />
+            <input type="text" id="form1Example1" class="form-control @error('nom') is-invalid @enderror" name="nom" value="{{old('nom')}}" />
             <label class="form-label" for="form1Example1">Nom</label>
         </div>
         @error('nom')
             <small class="text-danger">{{$message}}</small>
         @enderror
         <div data-mdb-input-init class="form-outline mt-4">
-            <input type="text" id="form1Example1" class="form-control @error('prenom') is-invalid @enderror" name="prenom"/>
+            <input type="text" id="form1Example1" class="form-control @error('prenom') is-invalid @enderror" name="prenom" value="{{old('prenom')}}"/>
             <label class="form-label" for="form1Example1">Prenom</label>
         </div>
         @error('prenom')
@@ -32,23 +32,23 @@
             <small class="text-danger">{{$message}}</small>
         @enderror
         <div data-mdb-input-init class="form-outline mt-4">
-            <input type="number" id="form1Example1" class="form-control @error('montant_payé') is-invalid @enderror" name="montant_payé"/>
+            <input type="number" id="form1Example1" class="form-control @error('montant_payé') is-invalid @enderror" name="montant_payé" value="{{old('montant_payé')}}"/>
             <label class="form-label" for="form1Example1">Montant payé</label>
         </div>
         <!-- Default checkbox -->
         <div class="form-check mt-4">
-            <input class="form-check-input" type="checkbox" id="flexCheckDefault" name="assurance_payé" />
+            <input class="form-check-input" type="checkbox" id="flexCheckDefault" name="assurance_payé" value="{{old('assurance_payé')}}"/>
             <label class="form-check-label" for="flexCheckDefault">Assurance payé ?</label>
         </div>
         <div data-mdb-input-init id="assurance" hidden class="form-outline mt-4">
-            <input type="number" class="form-control @error('montant_assurance') is-invalid @enderror" name="montant_assurance"/>
+            <input type="number" class="form-control @error('montant_assurance') is-invalid @enderror" name="montant_assurance"value="{{old('montant_assurance')}}" />
             <label class="form-label" for="assurance">Montant de l'assurance</label>
         </div>
         @error('montant_assurance')
             <small class="text-danger">{{$message}}</small>
         @enderror
         <div data-mdb-input-init class="form-outline mt-4">
-            <input type="date" data-mdb-inline id="date_payment" class="form-control @error('date_payement') is-invalid @enderror" name="date_payement"/>
+            <input type="date" data-mdb-inline id="date_payment" class="form-control @error('date_payement') is-invalid @enderror" name="date_payement" value="{{old('date_payement')}}"/>
             <label class="form-label" for="date_payment">Date de payment</label>
         </div>
         @error('date_payement')
