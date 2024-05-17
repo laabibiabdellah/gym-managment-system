@@ -42,12 +42,15 @@ class UserController extends Controller
             'date_payement' => ['required', 'date'],
         ]);
 
+
+
         $data['date_payement'] = Carbon::parse($request->date_payement)->toDateString();
         $data['date_expriration'] = Carbon::parse($request->date_payement)->addDays(30 * $data['nombre_mois'])->toDateString();
 
         if ($request->has('assurance_payé')) {
             $data['assurance_payé'] = 1;
             $data['montant_assurance'] = $request['montant_assurance'];
+            $data['date_assurance'] = Carbon::now()->toDateString();
         } else {
             unset($data['montant_assurance']);
         }
@@ -85,6 +88,7 @@ class UserController extends Controller
         if ($request->has('assurance_payé')) {
             $data['assurance_payé'] = 1;
             $data['montant_assurance'] = $request['montant_assurance'];
+            $data['date_assurance'] = Carbon::now()->toDateString();
         } else {
             unset($data['montant_assurance']);
         }

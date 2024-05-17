@@ -23,15 +23,17 @@ document.addEventListener("DOMContentLoaded", function () {
                     cancelButtonColor: "#d33",
                     confirmButtonText: "Oui, supprime-le!",
                     cancelButtonText: "Annuler",
-                }).then((result) => {
-                if (result.isConfirmed) {
-                    Swal.fire({
-                        title: "Supprimé!",
-                        text: "Membre supprimé avec succès.",
-                        icon: "success"
-                    });
-                }
-            });
+                })
+                .then((result) => {
+                    if (result.isConfirmed) {
+                        form.submit();
+                        Swal.fire({
+                            title: "Supprimé!",
+                            text: "Membre supprimé avec succès.",
+                            icon: "success",
+                        });
+                    }
+                });
         });
     });
 });

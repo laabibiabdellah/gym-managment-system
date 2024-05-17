@@ -87,9 +87,15 @@
             <td><small>{{$member->montant_payé}} DH</small></td>
             <td>
               <span class="badge
-              {{$member->assurance_payé ? 'badge-success':'badge-danger'}}
+              {{$member->assurance_payé ? (
+                -Carbon::parse($member->date_assurance)
+                ->diffInDays($get_to_day) >= 365 ? 'badge-danger' : 'badge-success'
+               ):'badge-danger'}}
                rounded-pill d-inline">
-               {{$member->assurance_payé ? 'OUI':'NON'}}
+               {{$member->assurance_payé ? (
+                -Carbon::parse($member->date_assurance)
+                ->diffInDays($get_to_day) >= 365 ? 'NON' : 'OUI'
+               ):'NON'}}
               </span>
             </td>
             <td>{{$member->date_payement}}</td>

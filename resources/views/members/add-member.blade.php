@@ -81,13 +81,17 @@
 <script>
     const checkbox = document.getElementById('flexCheckDefault');
     const textInput = document.getElementById('assurance');
+    const dateAssurance = document.getElementById('date_assurance');
 
     checkbox.addEventListener('change', function() {
       if (this.checked) {
         textInput.removeAttribute('hidden');
+        dateAssurance.removeAttribute('hidden');
       } else {
         textInput.setAttribute('hidden', 'true');
+        dateAssurance.setAttribute('hidden', 'true');
         textInput.value = '';
+        dateAssurance.value = '';
       }
     });
   </script>

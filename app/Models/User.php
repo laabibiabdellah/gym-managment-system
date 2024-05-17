@@ -25,7 +25,8 @@ class User extends Authenticatable
         'date_payement',
         'date_expriration',
         'montant_assurance',
-        'assurance_payé'
+        'assurance_payé',
+        'date_assurance'
     ];
 
     /**

@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('email')->nullable();
             $table->date('date_payement')->nullable();
             $table->date('date_expriration')->nullable();
+            $table->date('date_assurance')->nullable();
             $table->decimal('montant_payé');
             $table->decimal("montant_assurance", 10, 2)->default(0);
             $table->boolean("assurance_payé")->default(0);

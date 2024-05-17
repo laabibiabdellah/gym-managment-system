@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\User;
+use Carbon\Carbon;
 use LaravelDaily\LaravelCharts\Classes\LaravelChart;
 
 class DashboardController extends Controller
@@ -17,6 +18,7 @@ class DashboardController extends Controller
         // charts
         $membersChart = $this->membersChart();
         $incomeChart = $this->incomeChart();
+
 
         return view('members.dash', compact('membersChart', 'incomeChart', 'membersCount', 'categoriesCount'));
     }
